@@ -93,6 +93,7 @@ def main():
         "target_url",
         help="DolphinScheduler Web URL, e.g. http://localhost:12345",
     )
+    parser.add_argument("--gateway-host", default=None, help="Python Gateway host (default: target host)")
     parser.add_argument("--gateway-port", type=int, default=25333, help="Python Gateway port")
     parser.add_argument(
         "--auth-token",
@@ -109,7 +110,8 @@ def main():
 
     try:
         _, host, _, base_url = parse_target(args.target_url)
-        create_accounts(args, gateway_host=host)
+        gateway_host = args.gateway_host or host
+        create_accounts(args, gateway_host=gateway_host)
         login_http(args, base_url=base_url)
     except Exception as exc:
         print(f"[!] Poc failed: {exc}", file=sys.stderr)
