@@ -1,6 +1,6 @@
 # Apache DolphinScheduler Python Gateway Unauthenticated Access Vulnerability Analysis & Exploitation Guide
 
-## Vulnerability Overview
+## Vulnerability Overview 
 
 In the default deployment of Apache DolphinScheduler 3.3.2 (especially the standalone image), the `application.yaml` enables the Python Gateway service (`enabled: true`), binds it to `0.0.0.0`, and ships with a fixed authentication token `jwUDzpLsNKEFER4*a8gruBH_GsAurNxU7A@Xc`. Any attacker who can reach this port can reuse the token to invoke all management interfaces provided by the Python Gateway.
 
