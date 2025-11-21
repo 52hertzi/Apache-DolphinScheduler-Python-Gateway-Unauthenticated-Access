@@ -2,6 +2,9 @@
 
 官方认为客户环境应当是安全的，不认为是个漏洞～～
 
+分析：
+https://52hertzi.com/2025/11/18/Apache-DolphinScheduler-Python-Gateway-未授权访问漏洞分析与复现/
+
 使用方式：
 
 ```
